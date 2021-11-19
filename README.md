@@ -10,7 +10,6 @@
 # Technologies
 - React Js
 
-
 # Instructions
 
 This is a pokeman take home challenge, consuming API from https://pokeapi.co/api/v2/pokemon
