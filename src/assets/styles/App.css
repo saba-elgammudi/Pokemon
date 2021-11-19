@@ -1,0 +1,41 @@
+.main-container{
+    display: flex
+}
+.prev-next{
+    border: 1px solid #B8B8B8;
+    border-radius: 5px;
+    padding: 1rem;
+    cursor: pointer;
+    margin: 1rem;
+}
+.card-container{
+    display: flex;
+    background: #5c767861;
+    border-radius: 1rem;
+    margin:1rem;
+    cursor: pointer;
+}
+.title-img{
+    display: grid;
+}
+.name{
+    margin: 0.5rem 1rem ;
+    font-weight: 700;
+}
+.description{
+    margin: 0 1rem;
+    padding: 3rem 0.5rem;
+}
+.pagination{
+    margin: 2rem auto;
+    width: fit-content;
+}
+.details{
+    margin: 1rem;
+     font-size: 1.2rem;
+     background: #c1cbcb;
+     padding: 3rem; 
+     border-radius: 1rem;
+     width: 70rem;
+     height: 135.5rem;
+}
