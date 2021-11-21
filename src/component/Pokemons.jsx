@@ -1,10 +1,22 @@
 import React from 'react'
 
 
-const Pokemons = ({ list, fetchAll, final, getOne }) => {
+const Pokemons = ({ list, fetchAll, final, getOne,handleChangeSearch,search }) => {
 
     return (
         <div>
+            <input type="text" className="search-input" placeholder="Search..." onChange={(e)=>handleChangeSearch(e,final.count)} />
+            {
+                search.length > 0?
+                <div className="search-container">
+                    {
+                        search.map((search,index)=>
+                        <div key={index} onClick={() => getOne(search.url)} className="search-item">{search.name}</div>
+                        )
+                    }
+                </div>
+                :null
+            }
             {
                 list.map((pokemon, index) => (
                     <div 
