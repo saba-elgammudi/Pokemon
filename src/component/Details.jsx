@@ -5,6 +5,7 @@ const Details = ({ pokemon }) => {
             {
                 pokemon.weight ?
                     <div className="details">
+                        <img src={pokemon.sprites.back_default} alt={pokemon.name}/>
                         <p>Species Name: {pokemon?.species?.name}</p>
                         <p>Species URL: <a href={pokemon?.species?.url}>{pokemon?.species?.url}</a></p>
                         {pokemon?.stats?.map((stat, index) => (

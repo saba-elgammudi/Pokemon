@@ -8,6 +8,7 @@ const App = () => {
   const [list, setList] = useState([]);
   const [final, setFinal] = useState([]);
   const [pokemon, setPokemon] = useState({});
+  const [search, setSearch] = useState([]);
 
   //#region custom functions
   /**
@@ -46,6 +47,20 @@ const App = () => {
     }
     setFinal(finalResult)
   }
+  const handleChangeSearch = async (e,count) => {
+    const target = e.target;
+    const value = target.value;
+    if(value){
+      const cApi = `${process.env.REACT_APP_URL}?limit=${count}&offset=0`;
+      const all = await api('get', cApi);
+      const { results } = all;
+      let pokemonsSearch = results?.filter(pok => pok.name.includes(value))
+      setSearch(pokemonsSearch)
+    }
+    else{
+      setSearch([])
+    }
+  }
   /**
    * Get one pokemon
    */
@@ -67,6 +82,8 @@ const App = () => {
         list={list}
         final={final}
         getOne={getOne}
+        handleChangeSearch={handleChangeSearch}
+        search={search}
       />
       <Details pokemon={pokemon} />
     </div>
